@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "174866165142",
+    "project_id": "public-safety-commission",
+    "storage_bucket": "public-safety-commission.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174866165142:android:700f05ef441377439841b7",
+        "android_client_info": {
+          "package_name": "com.example.publicsafetycomission"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174866165142-5s88p8kd38svp1a7madc8qhk697rtopr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.publicsafetycomission",
+            "certificate_hash": "b2c06301c6668d45e452d63fc1efe41e490653c7"
+          }
+        },
+        {
+          "client_id": "174866165142-1ki8slihak4c0p1tft1jq2kan26b2nn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA480UYylPdZVJXp9K2hclhDuguc-yRj4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174866165142-1ki8slihak4c0p1tft1jq2kan26b2nn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
