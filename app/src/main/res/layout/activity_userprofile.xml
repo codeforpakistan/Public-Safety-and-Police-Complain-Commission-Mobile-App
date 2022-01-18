@@ -58,11 +58,11 @@
             android:layout_width="280dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/edbc"
+            android:background="@drawable/round_border_edittext"
             android:gravity="center"
             android:hint="phone number"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
         <EditText
@@ -70,11 +70,11 @@
             android:layout_width="280dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/edbc"
+            android:background="@drawable/round_border_edittext"
             android:gravity="center"
             android:hint="full name"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
         <EditText
@@ -82,11 +82,11 @@
             android:layout_width="280dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/edbc"
+            android:background="@drawable/round_border_edittext"
             android:gravity="center"
             android:hint="father/husband name"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -94,6 +94,9 @@
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
+            app:boxStrokeColor="@color/green"
+            app:helperTextTextColor="@color/green"
+            android:outlineSpotShadowColor="@color/green"
             >
 
             <AutoCompleteTextView
@@ -111,11 +114,11 @@
             android:layout_width="280dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/edbc"
+            android:background="@drawable/round_border_edittext"
             android:gravity="center"
             android:hint="CNIC"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
         <EditText
@@ -123,11 +126,11 @@
             android:layout_width="280dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/edbc"
+            android:background="@drawable/round_border_edittext"
             android:gravity="center"
             android:hint="Email"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
         <Spinner
@@ -158,11 +161,11 @@
             android:layout_width="280dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/edbc"
+            android:background="@drawable/round_border_edittext"
             android:gravity="center"
             android:hint="union council"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
         <EditText
@@ -170,11 +173,11 @@
             android:layout_width="280dp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@drawable/edbc"
+            android:background="@drawable/round_border_edittext"
             android:gravity="center"
             android:hint="Address"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_12sdp" />
 
         <androidx.appcompat.widget.AppCompatButton

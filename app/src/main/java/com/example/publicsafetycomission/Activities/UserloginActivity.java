@@ -32,9 +32,9 @@ public class UserloginActivity extends AppCompatActivity {
 
     EditText etloginusername, etloginpassword;
     Button loginsubmit;
-    TextView register;
+    TextView register, forgotpass;
     String loginusername, loginpassword;
-    ImageView passvisible,passhide;
+    ImageView passvisible, passhide;
     SharedPrefManager sharedPrefManager;
     public static String token;
 
@@ -43,6 +43,14 @@ public class UserloginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlogin);
         passvisible = findViewById(R.id.pastePinfirstlog);
+        forgotpass = findViewById(R.id.forgetpassword);
+        forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserloginActivity.this, ForgetPassword.class);
+                startActivity(i);
+            }
+        });
         passvisible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +96,16 @@ public class UserloginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 loginusername = etloginusername.getText().toString();
                 loginpassword = etloginpassword.getText().toString();
+                if (loginusername.isEmpty()) {
+                    etloginusername.setError("this feild is required to fill");
+                    etloginusername.requestFocus();
+                    return;
+                }
+                if (loginpassword.isEmpty()) {
+                    etloginpassword.setError("this feild is required to fill");
+                    etloginpassword.requestFocus();
+                    return;
+                }
                 loginUser();
 
             }

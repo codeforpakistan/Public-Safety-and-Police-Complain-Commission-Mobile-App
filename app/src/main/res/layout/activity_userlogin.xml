@@ -20,14 +20,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Public safety Commission,KPK"
+            android:text="Public safety Commission,KP"
             android:textSize="@dimen/_15sdp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kplogo"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_40sdp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             android:gravity="center"
             android:text="Login "
             android:textColor="@color/black"
@@ -54,14 +61,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:background="@color/mycolorrrr"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/loginusername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
+                android:background="@drawable/round_border_edittext"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
                 android:drawableLeft="@drawable/ic_user"
                 android:drawablePadding="10dp"
@@ -81,14 +87,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:background="@color/mycolorrrr"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/loginpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
+                android:background="@drawable/round_border_edittext"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:drawablePadding="10dp"
                 android:hint="Password"
@@ -119,40 +124,6 @@
                 android:src="@drawable/visibility" />
         </LinearLayout>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginBottom="@dimen/_10sdp"-->
-<!--            android:background="@color/mycolorrrr"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <EditText-->
-<!--                android:id="@+id/confirmpassword"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@null"-->
-<!--                android:drawableLeft="@drawable/ic_lock_black_24dp"-->
-<!--                android:drawablePadding="10dp"-->
-<!--                android:hint="Confirm Password"-->
-<!--                android:imeOptions="actionNext"-->
-<!--                android:inputType="textPassword"-->
-<!--                android:padding="@dimen/_10sdp"-->
-<!--                android:paddingBottom="@dimen/_10sdp"-->
-<!--                android:singleLine="true"-->
-<!--                android:textColor="@color/mytextcolor"-->
-<!--                android:textColorHint="@color/mytextcolor"-->
-<!--                android:textSize="@dimen/_14sdp" />-->
-
-<!--            <ImageButton-->
-<!--                android:id="@+id/pastePinfirst2"-->
-<!--                style="?android:buttonBarButtonStyle"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft="-60dp"-->
-<!--                android:paddingBottom="5dp"-->
-<!--                android:src="@drawable/visibility" />-->
-<!--        </LinearLayout>-->
-
 
 
         <Button
@@ -160,8 +131,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
-            android:background="@color/purple_200"
+            android:background="@drawable/round_border_edittext"
             android:text="Login"
+            android:shadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/green"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
 
@@ -172,9 +145,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_10sdp"
             android:text="Forget your password?"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="@dimen/_11sdp"
-            android:textStyle="normal" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvSignIn"
@@ -185,6 +158,7 @@
             android:alpha="0.9"
             android:gravity="center"
             android:text="Dont have Account ?"
+            android:textStyle="italic"
             android:textColor="@color/mycolorr"
             android:textSize="@dimen/_13sdp" />
 
@@ -193,11 +167,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:alpha="0.9"
+            android:layout_marginTop="@dimen/_10sdp"
             android:gravity="center"
             android:text="Signup"
-            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="@dimen/_13sdp" />
     </LinearLayout>
     <!--    <LinearLayout-->

@@ -4,14 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-<!--    <TextView-->
-<!--        android:id="@+id/testing"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -20,7 +12,6 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
 
             <LinearLayout
@@ -35,6 +26,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0">
 
+
                 <TextView
                     android:layout_width="@dimen/_220sdp"
                     android:layout_height="wrap_content"
@@ -46,13 +38,12 @@
                     android:textStyle="bold" />
 
 
-
                 <EditText
                     android:id="@+id/contact"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_30sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="phone number"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
@@ -64,7 +55,7 @@
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="full name"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
@@ -76,7 +67,7 @@
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="father/husband name"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
@@ -87,15 +78,14 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    >
+                    android:layout_marginTop="@dimen/_10sdp">
 
                     <AutoCompleteTextView
                         android:id="@+id/datesFilterSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="none"
-                        android:hint="Gender"/>
+                        android:hint="Gender"
+                        android:inputType="none" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,7 +95,7 @@
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="CNIC"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
@@ -117,7 +107,7 @@
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="Email"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
@@ -129,16 +119,15 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    >
+                    android:layout_marginTop="@dimen/_10sdp">
 
                     <AutoCompleteTextView
                         android:id="@+id/dropdistrict"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="District"
-                        android:isScrollContainer="true"
-                        android:inputType="none"/>
+                        android:inputType="none"
+                        android:isScrollContainer="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,7 +136,7 @@
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="union council"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
@@ -160,26 +149,26 @@
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="Address"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/blue"
                     android:textSize="@dimen/_12sdp" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    >
+                    android:layout_marginTop="@dimen/_10sdp">
 
                     <AutoCompleteTextView
                         android:id="@+id/dropct"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="complaint category"
-                        android:isScrollContainer="true"
-                        android:inputType="none"/>
+                        android:inputType="none"
+                        android:isScrollContainer="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -188,12 +177,13 @@
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/edbc"
+                    android:background="@drawable/round_border_edittext"
                     android:gravity="center"
                     android:hint="Complaint Detials"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/blue"
                     android:textSize="@dimen/_12sdp" />
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonLogout"
                     android:layout_width="200dp"
@@ -211,14 +201,14 @@
                     android:gravity="center"
                     android:text="Add attachments JPG/Video/PDF/"
                     android:textSize="@dimen/_10sdp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/next"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:background="@color/allg"
+                    android:background="@drawable/round_border_edittext"
                     android:text="next"
                     android:textColor="@color/white" />
 

@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.publicsafetycomission.APIinterface.API;
+import com.example.publicsafetycomission.Modelclasses.Districts;
 import com.example.publicsafetycomission.R;
 import com.example.publicsafetycomission.Response.DistrictResponse;
 import com.example.publicsafetycomission.Response.RestAdapter;
@@ -70,14 +71,14 @@ public class UserProfileActivity extends AppCompatActivity {
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.dropdown_menu_item, genders);
         AutoCompleteTextView autocompleteTV = findViewById(R.id.datesFilterSpinner);
         autocompleteTV.setAdapter(arrayAdapter);
-        displayDistrict();
+        Displaydistricts();
 
 
         districtspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                districtName = ListDistrictName.get(i);
-//                districtID = ListDistrictID.get(i);
+                districtName = ListDistrictName.get(i);
+                districtID = ListDistrictID.get(i);
 
 
             }
@@ -209,40 +210,48 @@ public class UserProfileActivity extends AppCompatActivity {
 
     }
 
-    private void displayDistrict() {
+  private void Displaydistricts(){
 
         API api = RestAdapter.createAPI();
         Call<DistrictResponse> call = api.getDistricts(passtoken);
-        call.enqueue(new Callback<DistrictResponse>() {
+      Log.d("get", "onClick: " +passtoken);
+
+      call.enqueue(new Callback<DistrictResponse>() {
             @Override
-            public void onResponse(@NonNull Call<DistrictResponse> call, @NonNull Response<DistrictResponse> response) {
-                DistrictResponse districtresponse = response.body();
-                if (response.isSuccessful()) {
-                    if (districtresponse != null) {
+            public void onResponse(Call<DistrictResponse> call, Response<DistrictResponse> response) {
+                Districts districtResponse = response.body().getDistricts();
+                int size=districtResponse.getDistrictName().length();
+                if (response.isSuccessful()){
+                    if (districtResponse!=null){
 
-                        Toast.makeText(UserProfileActivity.this, "district update"+response, Toast.LENGTH_SHORT).show();
-
-
-
-                        try {
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                        for (int i=0;i<size;i++) {
+                            ListDistrictName.add(districtResponse.getDistrictName());
+                            ListDistrictID.add(districtResponse.getDistrictId());
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(UserProfileActivity.this, android.R.layout.simple_spinner_item, ListDistrictName);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            districtspinner.setAdapter(adapter);
+                            Toast.makeText(UserProfileActivity.this, "district fetched", Toast.LENGTH_SHORT).show();
                         }
-                    } else {
-                        Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
                     }
+
+                    try {
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                else {
+                    Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
+
                 }
             }
 
             @Override
             public void onFailure(Call<DistrictResponse> call, Throwable t) {
-                Toast.makeText(UserProfileActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserProfileActivity.this, "failed to load"+t ,Toast.LENGTH_SHORT).show();
             }
         });
-
-
-    }
+  }
 
     @Override
     public void onBackPressed() {

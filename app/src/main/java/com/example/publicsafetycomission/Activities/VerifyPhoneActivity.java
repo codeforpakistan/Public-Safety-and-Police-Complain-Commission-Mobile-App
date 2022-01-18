@@ -37,18 +37,19 @@ public class VerifyPhoneActivity extends AppCompatActivity {
 
     TextInputEditText editText;
     AppCompatButton buttonSignIn;
+    PinView pinView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification_code);
-        PinView pinView=findViewById(R.id.pinview);
+        pinView=findViewById(R.id.editTextCode);
 
         mAuth = FirebaseAuth.getInstance();
 
 
 
-        editText = findViewById(R.id.editTextCode);
+        editText = findViewById(R.id.editTextCode1);
         buttonSignIn = findViewById(R.id.buttonSignIn);
 
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
@@ -65,12 +66,12 @@ public class VerifyPhoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String code = editText.getText().toString().trim();
+                String code = pinView.getText().toString().trim();
 
                 if (code.isEmpty() || code.length() < 6) {
 
-                    editText.setError("Enter code...");
-                    editText.requestFocus();
+//                    pinView.error("Enter code...");
+                    pinView.requestPinFocus();
                     return;
                 }
                 verifyCode(code);
