@@ -218,15 +218,16 @@ public class UserProfileActivity extends AppCompatActivity {
 
       call.enqueue(new Callback<DistrictResponse>() {
             @Override
-            public void onResponse(Call<DistrictResponse> call, Response<DistrictResponse> response) {
-                Districts districtResponse = response.body().getDistricts();
-                int size=districtResponse.getDistrictName().length();
+            public void onResponse(@NonNull Call<DistrictResponse> call, @NonNull Response<DistrictResponse> response) {
+                DistrictResponse districtResponse = response.body();
+               List <Districts> districts = response.body().getDistricts();
+                int size=districts.size();
                 if (response.isSuccessful()){
                     if (districtResponse!=null){
 
                         for (int i=0;i<size;i++) {
-                            ListDistrictName.add(districtResponse.getDistrictName());
-                            ListDistrictID.add(districtResponse.getDistrictId());
+                            ListDistrictName.add(districts.get(i).getDistrictName());
+                            ListDistrictID.add(districts.get(i).getDistrictId());
                             ArrayAdapter<String> adapter = new ArrayAdapter<String>(UserProfileActivity.this, android.R.layout.simple_spinner_item, ListDistrictName);
                             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             districtspinner.setAdapter(adapter);

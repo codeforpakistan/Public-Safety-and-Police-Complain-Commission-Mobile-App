@@ -3,16 +3,18 @@ package com.example.publicsafetycomission.Response;
 import com.example.publicsafetycomission.Modelclasses.Districts;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class DistrictResponse {
 
     @SerializedName("response")
-    private Integer response;
+    private String response;
     @SerializedName("response_msg")
     private String response_msg;
     @SerializedName("districts")
-    private Districts districts;
+    private List <Districts> districts;
 
-    public Integer getResponse() {
+    public String getResponse() {
         return response;
     }
 
@@ -20,7 +22,7 @@ public class DistrictResponse {
         return response_msg;
     }
 
-    public Districts getDistricts() {
+    public List<Districts> getDistricts() {
         return districts;
     }
 }

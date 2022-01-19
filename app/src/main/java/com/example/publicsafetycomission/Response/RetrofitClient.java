@@ -28,48 +28,48 @@ public class RetrofitClient {
 
 //    public static final String BASE_URL = "http://ppsc.kp.gov.pk/Api/";
 
-    private static SharedPrefManager sharedPrefManager;
-    private static Context context;
-
-
-    public static API createAPI(Context context1) {
-
-        context = context1;
-
-        sharedPrefManager = new SharedPrefManager(context);
-        String gottoken = sharedPrefManager.getUser().getToken();
-
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(5, TimeUnit.SECONDS);
-        builder.writeTimeout(10, TimeUnit.SECONDS);
-        builder.readTimeout(30, TimeUnit.SECONDS);
-        if (BuildConfig.DEBUG) {
-            builder
-                    .addInterceptor(new Interceptor() {
-                        @Override
-                        public Response intercept(Chain chain) throws IOException {
-                            Request newRequest = chain.request().newBuilder()
-                                    .addHeader("Authorization", gottoken).build();
-                            return chain.proceed(newRequest);
-
-                        }
-                    })
-                    .addInterceptor(logging);
-        }
-        builder.cache(null);
-        OkHttpClient okHttpClient = builder.build();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
-                .build();
-
-        return retrofit.create(API.class);
-    }
+//    private static SharedPrefManager sharedPrefManager;
+//    private static Context context;
+//
+//
+//    public static API createAPI(Context context1) {
+//
+//        context = context1;
+//
+//        sharedPrefManager = new SharedPrefManager(context);
+//        String gottoken = sharedPrefManager.getUser().getToken();
+//
+//        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+//        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+//
+//        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+//        builder.connectTimeout(5, TimeUnit.SECONDS);
+//        builder.writeTimeout(10, TimeUnit.SECONDS);
+//        builder.readTimeout(30, TimeUnit.SECONDS);
+//        if (BuildConfig.DEBUG) {
+//            builder
+//                    .addInterceptor(new Interceptor() {
+//                        @Override
+//                        public Response intercept(Chain chain) throws IOException {
+//                            Request newRequest = chain.request().newBuilder()
+//                                    .addHeader("Authorization", gottoken).build();
+//                            return chain.proceed(newRequest);
+//
+//                        }
+//                    })
+//                    .addInterceptor(logging);
+//        }
+//        builder.cache(null);
+//        OkHttpClient okHttpClient = builder.build();
+//
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(okHttpClient)
+//                .build();
+//
+//        return retrofit.create(API.class);
+//    }
 
 
 }

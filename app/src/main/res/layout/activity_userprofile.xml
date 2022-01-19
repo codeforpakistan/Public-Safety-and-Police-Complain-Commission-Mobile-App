@@ -135,8 +135,10 @@
 
         <Spinner
             android:id="@+id/spinnerd"
-            android:layout_width="@dimen/_200sdp"
+            android:layout_width="@dimen/_220sdp"
             android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/round_border_edittext"
             />
 
 <!--        <com.google.android.material.textfield.TextInputLayout-->
