@@ -35,7 +35,7 @@ public class UserProfileActivity extends AppCompatActivity {
     String phoneNumber;
     TextView mobileNumber;
 
-    Spinner districtspinner;
+    Spinner districtspinner,spinnergender;
     List<String> ListDistrictName;
     List<String> ListDistrictID;
     String districtID;
@@ -50,6 +50,10 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userprofile);
+
+        spinnergender = findViewById(R.id.spinnergender);
+
+
         districtspinner = findViewById(R.id.spinnerd);
         ListDistrictName = new ArrayList<>();
         ListDistrictID = new ArrayList<>();
@@ -67,10 +71,10 @@ public class UserProfileActivity extends AppCompatActivity {
         Log.d("aa", "token= " + passtoken);
 
 
-        String[] genders = getResources().getStringArray(R.array.gender);
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.dropdown_menu_item, genders);
-        AutoCompleteTextView autocompleteTV = findViewById(R.id.datesFilterSpinner);
-        autocompleteTV.setAdapter(arrayAdapter);
+//        String[] genders = getResources().getStringArray(R.array.gender);
+//        ArrayAdapter arrayAdapter = new ArrayAdapter(this, R.layout.dropdown_menu_item, genders);
+//        AutoCompleteTextView autocompleteTV = findViewById(R.id.datesFilterSpinner);
+//        autocompleteTV.setAdapter(arrayAdapter);
         Displaydistricts();
 
 
@@ -111,8 +115,8 @@ public class UserProfileActivity extends AppCompatActivity {
                 profilename = fullname.getText().toString();
                 profilefname = fathername.getText().toString().trim();
                 profilecnic = cinic.getText().toString();
-                profiledistrict = String.valueOf(districtspinner.getAdapter());
-                profilegender = String.valueOf(autocompleteTV.getAdapter());
+                profiledistrict = String.valueOf(districtID);
+                profilegender = String.valueOf(spinnergender);
                 profileemail = email.getText().toString();
                 profileaddress = address.getText().toString();
                 profileuc = uc.getText().toString();
@@ -220,11 +224,10 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call<DistrictResponse> call, @NonNull Response<DistrictResponse> response) {
                 DistrictResponse districtResponse = response.body();
-               List <Districts> districts = response.body().getDistricts();
+               List <Districts> districts = districtResponse.getDistricts();
                 int size=districts.size();
                 if (response.isSuccessful()){
                     if (districtResponse!=null){
-
                         for (int i=0;i<size;i++) {
                             ListDistrictName.add(districts.get(i).getDistrictName());
                             ListDistrictID.add(districts.get(i).getDistrictId());
@@ -236,6 +239,7 @@ public class UserProfileActivity extends AppCompatActivity {
                     }
 
                     try {
+
 
                     } catch (Exception e) {
                         e.printStackTrace();

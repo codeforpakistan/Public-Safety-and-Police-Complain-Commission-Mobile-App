@@ -3,7 +3,7 @@ package com.example.publicsafetycomission.Response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class RegsiterResponse {
+public class RegsiterUserResponse {
 
 
 
@@ -15,7 +15,7 @@ public class RegsiterResponse {
     private String responseMsg;
     @SerializedName("data")
     @Expose
-    private RegisterDataClass registerDataClass;
+    private RegisterUserDataClass registerUserDataClass;
 
     public String getResponse() {
         return response;
@@ -33,12 +33,12 @@ public class RegsiterResponse {
         this.responseMsg = responseMsg;
     }
 
-    public RegisterDataClass getData() {
-        return registerDataClass;
+    public RegisterUserDataClass getData() {
+        return registerUserDataClass;
     }
 
     public void setData(Data data) {
-        this.registerDataClass = registerDataClass;
+        this.registerUserDataClass = registerUserDataClass;
     }
 
 

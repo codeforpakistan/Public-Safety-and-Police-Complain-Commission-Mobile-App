@@ -39,7 +39,7 @@
 
 
                 <EditText
-                    android:id="@+id/contact"
+                    android:id="@+id/contact_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_30sdp"
@@ -51,7 +51,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <EditText
-                    android:id="@+id/fullname"
+                    android:id="@+id/fullname_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -63,7 +63,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <EditText
-                    android:id="@+id/fname"
+                    android:id="@+id/fname_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -74,24 +74,17 @@
                     android:textColor="@color/blue"
                     android:textSize="@dimen/_12sdp" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="280dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/datesFilterSpinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Gender"
-                        android:inputType="none" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/spinnergender_comp"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/round_border_edittext"
+                    />
 
 
                 <EditText
-                    android:id="@+id/cinic"
+                    android:id="@+id/cinic_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -103,7 +96,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/email_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -115,24 +108,16 @@
                     android:textSize="@dimen/_12sdp" />
 
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="280dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/dropdistrict"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="District"
-                        android:inputType="none"
-                        android:isScrollContainer="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/spinnerdistrict_comp"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/round_border_edittext"
+                    />
 
                 <EditText
-                    android:id="@+id/unioncouncil"
+                    android:id="@+id/unioncouncil_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -145,7 +130,7 @@
 
 
                 <EditText
-                    android:id="@+id/address"
+                    android:id="@+id/address_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -156,24 +141,16 @@
                     android:textColor="@color/blue"
                     android:textSize="@dimen/_12sdp" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="280dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/dropct"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="complaint category"
-                        android:inputType="none"
-                        android:isScrollContainer="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/spinnercat_comp"
+                    android:layout_width="@dimen/_230sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/round_border_edittext"
+                    />
 
                 <EditText
-                    android:id="@+id/complaintdetials"
+                    android:id="@+id/complaintdetials_comp"
                     android:layout_width="280dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginTop="@dimen/_10sdp"
@@ -204,7 +181,7 @@
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/next"
+                    android:id="@+id/nextcomp"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"

@@ -3,7 +3,7 @@ package com.example.publicsafetycomission.Response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class RegisterDataClass {
+public class RegisterUserDataClass {
 
 
     @SerializedName("user_id")

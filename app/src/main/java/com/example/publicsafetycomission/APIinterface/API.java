@@ -1,11 +1,11 @@
 package com.example.publicsafetycomission.APIinterface;
 
+import com.example.publicsafetycomission.Response.CategoryResponse;
 import com.example.publicsafetycomission.Response.DistrictResponse;
 import com.example.publicsafetycomission.Response.LoginUserResponse;
-import com.example.publicsafetycomission.Response.RegsiterResponse;
+import com.example.publicsafetycomission.Response.RegisterComplaintResponse;
+import com.example.publicsafetycomission.Response.RegsiterUserResponse;
 import com.example.publicsafetycomission.Response.UpdateUserResponse;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -21,7 +21,7 @@ public interface API {
 
     @FormUrlEncoded
     @POST("complainant_registration")
-    Call<RegsiterResponse> getUserRegi(
+    Call<RegsiterUserResponse> getUserRegi(
             @Field("user_name") String username,
             @Field("user_password") String password,
             @Field("user_contact") String phone
@@ -52,15 +52,32 @@ public interface API {
             @Field("user_password") String user_password
     );
 
-   //get districts
+    //get districts
     @FormUrlEncoded
-   @POST("districts_get")
-   Call<DistrictResponse> getDistricts(
+    @POST("districts_get")
+    Call<DistrictResponse> getDistricts(
             @Field("token") String passtoken
 
     );
 
+    //get complaint_categories
+    @FormUrlEncoded
+    @POST("complaint_categories_get")
+    Call<CategoryResponse> getcomplaintcategories(
+            @Field("token") String passtokencomp
 
+    );
 
+//complaint_registration
+    @FormUrlEncoded
+    @POST("complaint_register")
+    Call<RegisterComplaintResponse> register_complaint(
+            @Field("complaint_category_id_fk") String complaint_category,
+            @Field("complaint_detail") String complaint_details,
+            @Field("district_id_fk") String complaint_district,
+            @Field("complaint_council") String complaint_uc,
+            @Field("token") String passtokencomp
+
+    );
 
 }

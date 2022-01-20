@@ -2,8 +2,6 @@ package com.example.publicsafetycomission.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
@@ -18,19 +16,14 @@ import android.widget.Toast;
 import com.example.publicsafetycomission.APIinterface.API;
 import com.example.publicsafetycomission.R;
 //import com.example.publicsafetycomission.Response.API;
-import com.example.publicsafetycomission.Response.RegsiterResponse;
+import com.example.publicsafetycomission.Response.RegsiterUserResponse;
 import com.example.publicsafetycomission.Response.RestAdapter;
-import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-
 
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -143,10 +136,10 @@ public class RegistrationActivity extends AppCompatActivity {
 //        API api = retrofit.create(API.class);
         API api = RestAdapter.createAPI();
 
-        Call<RegsiterResponse> call = api.getUserRegi(username, password,phone);
-        call.enqueue(new Callback<RegsiterResponse>() {
+        Call<RegsiterUserResponse> call = api.getUserRegi(username, password,phone);
+        call.enqueue(new Callback<RegsiterUserResponse>() {
             @Override
-            public void onResponse( Call<RegsiterResponse> call,  Response<RegsiterResponse> response) {
+            public void onResponse(Call<RegsiterUserResponse> call, Response<RegsiterUserResponse> response) {
 //                Log.i("Responsestring", response.body().toString());
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
@@ -166,7 +159,7 @@ public class RegistrationActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<RegsiterResponse> call, Throwable t) {
+            public void onFailure(Call<RegsiterUserResponse> call, Throwable t) {
                 Log.d("go", "onFailure: " + t.toString());
             }
         });
