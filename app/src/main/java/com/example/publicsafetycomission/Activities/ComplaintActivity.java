@@ -274,7 +274,6 @@ public class ComplaintActivity extends AppCompatActivity {
                             ArrayAdapter<String> adapter = new ArrayAdapter<String>(ComplaintActivity.this, android.R.layout.simple_spinner_item, ListDistrictName);
                             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             districtspinner_comp.setAdapter(adapter);
-                            Toast.makeText(ComplaintActivity.this, "district fetched", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -336,7 +335,7 @@ public class ComplaintActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CategoryResponse> call, Throwable t) {
-                Toast.makeText(ComplaintActivity.this, "failed to load" + t, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ComplaintActivity.this, "failed to load" , Toast.LENGTH_SHORT).show();
             }
         });
     }

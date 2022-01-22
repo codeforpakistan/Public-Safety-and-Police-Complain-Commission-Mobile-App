@@ -12,7 +12,7 @@ public class CategoryResponse {
     private String response;
     @SerializedName("response_msg")
     private String response_msg;
-    @SerializedName("coomplaint_categories")
+    @SerializedName("complaint_categories")
     private List <Complaint_categories> complaint_categories;
 
     public String getResponse() {
